@@ -1,0 +1,38 @@
+<div class="middle-section">
+    <div class="widget left">
+        <app-top-three-products></app-top-three-products>
+    </div>
+    <div class="widget right">
+        <app-last-few-transactions></app-last-few-transactions>
+    </div>
+</div>
+<div class="bottom-section">
+    <div class="widget left">
+        <table class="table table-striped">
+            <thead class="sticky-top">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Unit Sold</th>
+                <th scope="col">Total Revenue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                <td>${{product.unitPrice}}</td>
+                <td>{{product.unitsSold}}</td>
+                <td>${{product.unitsSold *  product.unitPrice}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+  
+</div>

@@ -1,0 +1,119 @@
+
+<h1 class="center-item title">Registration</h1>
+<div class="parent">
+<form [formGroup]="form" (ngSubmit)="submit()"class="flex-container w-full">
+        
+    <div class="form-group flex-item">
+
+        <!-- <div class="flex flex-col gap-2">
+            <label for="username">Username</label>
+            <input pInputText id="username" aria-describedby="username-help"  />
+            <small id="username-help">Enter your username to reset your password.</small>
+        </div> -->
+
+        <label for="firstName">First Name</label>
+        <input 
+            formControlName="firstName"
+            id="firstName" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger">
+            <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">First Name is required.</div>
+            <div *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']">First Name should be 3 character.</div>
+        </div>
+    </div>
+
+    <div class="form-group flex-item">
+        <label for="lastName">Last Name</label>
+        <input 
+            formControlName="lastName"
+            id="lastName" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger">
+            <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">Last Name is required.</div>
+            <div *ngIf="f['lastName'].errors && f['lastName'].errors['minlength']">Last Name should be 3 character.</div>
+        </div>
+    </div>
+
+    <div class="form-group flex-item">
+        <label for="username">Username</label>
+        <input 
+            formControlName="username"
+            id="username" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+            <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required.</div>
+            <div *ngIf="f['username'].errors && f['username'].errors['minlength']">Username should be 3 character.</div>
+        </div>
+    </div>
+     
+    <div class="form-group flex-item">
+        <label for="email">Email</label>
+        <input 
+            formControlName="email"
+            id="email" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+        </div>
+    </div>
+     
+    <div class="form-group flex-item">
+        <label for="confirmEmail">Confirm Email</label>
+        <input 
+            formControlName="confirmEmail"
+            id="confirmEmail" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f['confirmEmail'].touched && f['confirmEmail'].invalid" class="alert alert-danger">
+            <div *ngIf="f['confirmEmail'].errors && f['confirmEmail'].errors['required']">Email is required.</div>
+            <div *ngIf="f['confirmEmail'].errors && f['confirmEmail'].errors['confirmEmail']">Please, enter valid email address.</div>
+            <div *ngIf="form.get('confirmEmail')?.errors?.['matchingFields']">
+                Emails do not match.
+              </div>
+        </div>
+    </div>
+
+    <div class="form-group flex-item">
+        <label for="password">Password</label>
+        <input 
+            formControlName="password"
+            id="password" 
+            type="password" 
+            class="form-control">
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+            <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 8 character.</div>
+            <div *ngIf="f['password'].errors && f['password'].errors['password']">Please, enter valid password.</div>
+        </div>
+    </div>
+
+    <div class="form-group flex-item">
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+            formControlName="confirmPassword"
+            id="confirmPassword" 
+            type="password" 
+            class="form-control">
+        <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="alert alert-danger">
+            <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']">Password is required.</div>
+            <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['confirmPassword']">Please, enter valid password.</div>
+            <div *ngIf="form.get('confirmPassword')?.errors?.['matchingFields']">
+                Passwords do not match.
+              </div>
+        </div>
+    </div>
+    <div class="center-item p-3">
+        <button pButton pRipple severity="success" type="submit"  [disabled]="form.invalid">
+            <WindowMaximizeIcon pButtonIcon />
+            <span pButtonLabel>Submit</span>
+        </button>
+       
+    </div>
+    
+</form>
+</div>
