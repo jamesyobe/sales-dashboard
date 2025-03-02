@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="company-name-e">
+    e<span class="volution">Volution</span><span class="t">Technologies</span>
+  </div>
+  <div class="user" *ngIf="isLoggedIn === true">
+    <div class="user-name text-lg">
+      <span>{{ user.firstName }} {{ user.lastName }}</span>
+    </div>
+    <div class="user-image">{{ getInitials() }}</div>
+
+    <p-menu #menu [model]="itemsLogin" [popup]="true" />
+    <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v" />
+  </div>
+
+  <div class="user" *ngIf="!isLoggedIn">
+    <div class="user-name login-text" (click)="onLoginCLick()">Login</div>
+    <div class="user-image login-text">?</div>
+    <span class="lougout-menu">
+      <p-menu #menu [model]="itemsLogout" [popup]="true" />
+      <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v" />
+    </span>
+  </div>
+</div>
