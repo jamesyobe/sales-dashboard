@@ -1,0 +1,50 @@
+<div
+  class="container bg-light text-dark rounded p-3 shadow-lg  "
+  *ngIf="trackingService.trackedProduct()"
+>
+  <h1 class="h3 text-center p-3 shadow-sm p-3 mb-3 bg-white rounded">
+    Tracking: {{ trackingService.trackedProduct()?.title }} 
+  </h1>
+  <div class="container">
+    <p-timeline
+      [value]="trackingService.trackedProduct()?.events"
+      align="alternate"
+      styleClass="customized-timeline"
+      [style]="{ width: '60rem', overflow: 'hidden', margin: '30px' }"
+    >
+      <ng-template #marker let-event>
+        <span
+          class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
+          [style]="{ 'background-color': event.color }"
+        >
+          <i
+            [class]="event.icon"
+            style="font-size: 1.5rem"
+            [style]="{ padding: '.5rem' }"
+          ></i>
+        </span>
+      </ng-template>
+      <ng-template #content let-event>
+        <p-card
+          [header]="event.status"
+          [subheader]="event.date"
+          [style]="{ padding: '1rem', marginLeft: '1rem',marginRight: '1rem' }"
+        >
+
+        
+          <img
+            *ngIf="trackingService.trackedProduct()?.imgSrc"
+            [src]="trackingService.trackedProduct()?.imgSrc"
+            [style]="{ height: '5rem' ,   display: 'block', 
+            margin: '0 auto' 
+   }"
+         
+          />
+          <p class=" m-1">
+            {{ event.notes }}
+          </p>
+        </p-card>
+      </ng-template>
+    </p-timeline>
+  </div>
+</div>

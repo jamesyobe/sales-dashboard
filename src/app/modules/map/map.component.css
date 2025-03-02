@@ -1,0 +1,13 @@
+.map-container{
+    box-shadow: 5px 5px 5px #939393;
+    margin: 10px;   
+    height: 800px;
+    padding: 10px;
+
+  }
+
+  .map {
+    height: 100%;
+    padding: 0;
+   
+  }
