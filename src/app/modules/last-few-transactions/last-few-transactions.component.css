@@ -48,9 +48,10 @@
     }
     .status {
       padding: 10px;
-      /* font-size: 15px; */
+      font-size: 12px;
       text-transform: uppercase;
-      font-weight: bold;
+      font-weight: 500;
+
       &.confirmed {
         color: #6920fb;
       }
@@ -62,6 +63,7 @@
       }
       &.out_for_delivery {
         color: #97cf0a;
+        
       }
       &.delivered {
         color: #058c1c;

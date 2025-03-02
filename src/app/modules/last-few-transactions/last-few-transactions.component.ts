@@ -21,7 +21,7 @@ export class LastFewTransactionsComponent {
       price: "$299",
       shop: "Tech Pro",
       location: "East Hartford",
-      status: "Out for Delivery",
+      status: "Delivery",
       imgSrc: imageSrc1,
       events : [
        
