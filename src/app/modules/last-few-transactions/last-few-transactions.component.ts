@@ -159,7 +159,6 @@ export class LastFewTransactionsComponent {
   ];
   constructor(private router: Router, private trackingService:TrackingService) { }
   onClick(product:TrackedProduct) {
-    console.log(product);
     this.trackingService.setProduct(product)
     this.router.navigate([`app/tracking`]);
     }

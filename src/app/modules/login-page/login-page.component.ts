@@ -34,7 +34,6 @@ export class LoginPageComponent {
   }
 
   login() {
-    console.log(this.loginForm.value)
     // Perform authentication logic (replace with your actual authentication mechanism)
     if (this.authService.login(this.loginForm.value.username, this.loginForm.value.password)) {
       // If authentication is successful, navigate to the home page or desired route

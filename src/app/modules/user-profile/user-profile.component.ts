@@ -19,7 +19,6 @@ export class UserProfileComponent {
     effect(() =>{
       if(this.authService.loggedIn()){
                this.user = authService.loggedIn().user;
-               console.log(this.user)
       }
     })
    }

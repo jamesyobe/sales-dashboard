@@ -23,7 +23,6 @@ export class AuthService {
         const value = this.localStorageService.getItem(`${username}${password}`);
         if (value) {
             const user = JSON.parse(value) as User
-            console.log(user)
             if (password === user.password) {
                 this.authenticated = true;
                 this.loggedIn.update((value) => value = { status: true, user: user });

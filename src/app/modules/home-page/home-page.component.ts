@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit{
           this.isLoggedIn = params['isLoggedIn'];
           
           // You can now use this.userId in your component
-          console.log('isLoggedIn:', this.isLoggedIn);
+      
         });
       }
 }
