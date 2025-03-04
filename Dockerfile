@@ -32,6 +32,6 @@ EXPOSE 80
 
 # Commands
 # docker build -t salesdashboardapp .
-# docker run -d -p 8080:80 salesdashboardapp
+# docker run -d -p 9090:80 salesdashboardapp
 # # Start Nginx
 # CMD ["nginx", "-g", "daemon off;"]
